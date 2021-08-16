@@ -44,15 +44,23 @@ app.use(
     })
 );
 
+
 app.use(express.urlencoded({
     extended: true
 }))
-
-app.use('/api/v1/login', authRouter)
-
 const multiUpload = uploadSec.fields([{ name: 'avatar', maxCount: 10 }, { name: 'cv', maxCount: 10 }]);
 app.use('/api/v1', multiUpload, userRouter);
 
+app.use('/api/v1/login', authRouter)
+app.use('/api/v1/data', userRouter)
+
+//change data user
+app.use('/api/v1', userRouter)
+app.use('/api/v1', userRouter)
+app.use('/api/v1', userRouter)
+//
+
+//cv user
 app.use('/api/v1/cv', userRouter );
 
 const start = async () => {

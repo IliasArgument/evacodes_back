@@ -24,6 +24,10 @@ const UserData = new Schema({
     cv: {
         type: String,
         required: false
+    },
+    checkbox: {
+        type: Boolean,
+        required: false
     }
 })
 

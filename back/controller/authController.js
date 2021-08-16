@@ -63,6 +63,7 @@ class authController {
             res.status(400).json({ message: 'Login Error' })
         }
     }
+   
 
     protect = catchAsync(async (req, res, next) => {
         // 1) Getting token and check of it's there
