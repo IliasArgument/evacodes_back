@@ -58,30 +58,6 @@ class userController {
         }
     }
 
-    async postChangeNameUser(req, res) {
-        try {
-            const { username, newUserName } = req?.body;
-            console.log(req?.body);
-
-            // console.log(mongoose.connection.db.collection('userdatas'), 'mongo')
-            // { "_id": req.body._id}, // Filter
-            // {$set: {"name": req.body.name}}, // Update
-            // {upsert: true} // add document with req.body._id if not exists 
-            mongoose.connection.db.collection('userdatas').updateOne({ "username": username }, { $set: { "username": newUserName } })
-            .then((obj) => {
-                console.log('Updated - ' + obj);
-            })
-            .catch((err) => {
-                console.log('Error: ' + err);
-            })
-
-            return res.json({ message: 'Данные пользователя успешно изменен' })
-        } catch (e) {
-            console.log(e)
-            res.status(400).json({ message: 'Error POST' })
-        }
-    }
-
     async getUserCv(req, res) {
 
         const { path } = req;

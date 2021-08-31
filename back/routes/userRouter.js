@@ -27,12 +27,15 @@ router
 router
     .route('/change/name')
     .post(userChangeData.postChangeNameUser)
+
 router
     .route('/change/skills')
     .post(userChangeData.postChangeSkillsUser)
+
 router
     .route('/change/stack')
     .post(userChangeData.postChangeStackUser)
+    
 router
     .route('/change/description')
     .post(userChangeData.postChangeDescriptionUser)
